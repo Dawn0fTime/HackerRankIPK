@@ -2,37 +2,29 @@ package com.dawndemeo;
 
 import org.junit.Test;
 
-import static com.dawndemeo.Solution.hourglassSum;
-import static org.junit.Assert.*;
+import static com.dawndemeo.Solution.rotLeft;
+import static org.junit.Assert.assertArrayEquals;
 
 public class SolutionTest {
 
     @Test
     public void example() {
-        int[][] arr = {{-9, -9, -9, 1, 1, 1},
-                {0, -9, 0, 4, 3, 2},
-                {-9, -9, -9, 1, 2, 3},
-                {0, 0, 8, 6, 6, 0},
-                {0, 0, 0, -2, 0, 0},
-                {0, 0, 1, 2, 4, 0}};
+        int[] arr = {1, 2, 3, 4, 5};
+        int rotations = 2;
 
-        int expectedResult = 28;
+        int[] expectedResult = {3, 4, 5, 1, 2};
 
-        assertEquals(expectedResult, hourglassSum(arr));
+        assertArrayEquals(expectedResult, rotLeft(arr, rotations));
     }
 
     @Test
     public void sample() {
-        int[][] arr = {{1, 1, 1, 0, 0, 0},
-                {0, 1, 0, 0, 0, 0},
-                {1, 1, 1, 0, 0, 0},
-                {0, 0, 2, 4, 4, 0},
-                {0, 0, 0, 2, 0, 0},
-                {0, 0, 1, 2, 4, 0}};
+        int[] arr = {1, 2, 3, 4, 5};
+        int rotations = 4;
 
-        int expectedResult = 19;
+        int[] expectedResult = {5, 1, 2, 3, 4};
 
-        assertEquals(expectedResult, hourglassSum(arr));
+        assertArrayEquals(expectedResult, rotLeft(arr, rotations));
     }
 
 
